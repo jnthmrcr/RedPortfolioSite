@@ -1,0 +1,55 @@
+@import "normalize";
+@import "variables";
+
+html {
+  font-size: 16px;
+  color: white;
+}
+
+body {
+  background: linear-gradient(to bottom, $color-bg-blu, $color-bg-red) fixed;
+}
+
+main {
+  margin: 0 auto;
+  width: 60rem;
+  background: #44444400;
+}
+
+.group-header {
+  margin: 1em auto 0.5rem auto;
+  width: 100%;
+  height: 5em;
+  background: linear-gradient(to bottom, $color-tile-solid, $color-tile-trans);
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@import 'project-card';
+
+.deco-cross {
+  display: block;
+  transform: translate(-0.1rem, -0.1rem);
+  mix-blend-mode: color-dodge;
+
+  &::before {
+    background-color: #c38d00;
+    content: "";
+    display: block;
+    transform: translateX(-1.4rem);
+    width: 3rem;
+    height: 0.2rem;
+  }
+
+  &::after {
+    background-color: #c38d00;
+    content: "";
+    display: block;
+    transform: translateY(-1.6rem);
+    width: 0.2rem;
+    height: 3rem;
+  }
+}
