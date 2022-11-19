@@ -5,13 +5,19 @@
   padding: 0.5rem;
   outline: 0.2rem rgba(255, 220, 130, 0.5) none;
   outline-offset: -0.1rem;
-
+  transition-duration: 1s;
   &:hover {
     outline: 0.2rem #fff solid;
     transition: outline-color 0.5s, outline-style 0s, filter 0.25s;
 
+    grid-column-end: span 2;
+    grid-row-end: span 3;
+
     .project-card-inner {
       mix-blend-mode: color-dodge;
+      div {
+        transform: scale(1.1) translateY(-2rem);
+      }
     }
   }
 }
@@ -53,5 +59,12 @@
     transform: translateY(-2rem);
     mix-blend-mode: soft-light;
     user-select: none;
+    
+    transition-duration: 1s;
+  }
+
+  img {
+    position: absolute;
+    // mix-blend-mode: color-dodge;
   }
 }

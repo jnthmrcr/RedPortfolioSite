@@ -10,6 +10,7 @@ html {
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
+  transition: all 0.5s;
 }
 
 /* Sections
@@ -371,13 +372,19 @@ main {
   padding: 0.5rem;
   outline: 0.2rem rgba(255, 220, 130, 0.5) none;
   outline-offset: -0.1rem;
+  transition-duration: 1s;
 }
 .project-card:hover {
   outline: 0.2rem #fff solid;
   transition: outline-color 0.5s, outline-style 0s, filter 0.25s;
+  grid-column-end: span 2;
+  grid-row-end: span 3;
 }
 .project-card:hover .project-card-inner {
   mix-blend-mode: color-dodge;
+}
+.project-card:hover .project-card-inner div {
+  transform: scale(1.1) translateY(-2rem);
 }
 
 .project-card-outline {
@@ -415,6 +422,17 @@ main {
   transform: translateY(-2rem);
   mix-blend-mode: soft-light;
   user-select: none;
+  transition-duration: 1s;
+}
+.project-card-inner img {
+  position: absolute;
+}
+
+.project-window {
+  background-color: #0C111A;
+  position: relative;
+  grid-column-end: span 2;
+  grid-row-end: span 3;
 }
 
 .deco-cross {
