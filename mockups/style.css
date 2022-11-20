@@ -349,16 +349,19 @@ body {
 header {
   position: relative;
   font-family: "Roboto Serif", "Times New Roman", Times, serif;
-  margin: auto;
-  margin-top: 8rem;
+  margin: 8rem auto 4rem auto;
   height: 7rem;
   background: linear-gradient(to bottom, #040507, #0c162442);
   width: 40rem;
   transition-duration: 300ms;
+  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
 }
 header:hover {
-  width: 44rem;
+  width: 41rem;
   transition-duration: 0ms;
+}
+header:hover {
+  text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
 header h1 {
   position: absolute;
@@ -385,7 +388,6 @@ main {
 section {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   transition-duration: 1s;
   margin: 2.5rem auto;
 }
@@ -395,13 +397,17 @@ section .heading {
   position: relative;
   transition-duration: 1s;
   border-radius: 0.2rem;
-  margin: auto;
+  margin: auto auto 0.3rem auto;
   width: 40rem;
   transition-duration: 300ms;
+  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
 }
 section .heading:hover {
-  width: 44rem;
+  width: 41rem;
   transition-duration: 0ms;
+}
+section .heading:hover {
+  text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
 section .heading h2 {
   font-family: "Roboto Serif", "Times New Roman", Times, serif;
@@ -412,6 +418,7 @@ section .heading h2 {
   bottom: 0.5rem;
   left: 0;
   right: 0;
+  cursor: pointer;
 }
 section .info {
   margin: 0;
@@ -427,9 +434,14 @@ section .info .blurb {
   border-radius: 0.2rem;
   text-align: left;
   height: 10rem;
+  cursor: pointer;
+  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
   outline: 0.2rem rgba(255, 220, 130, 0.5) none;
   outline-offset: -0.3rem;
   transition-duration: 300ms;
+}
+section .info .blurb:hover {
+  text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
 section .info .blurb h3 {
   font-family: "Roboto Slab", "Times New Roman", Times, serif;
@@ -442,7 +454,7 @@ section .info .blurb p {
   opacity: 70%;
 }
 section .info .blurb:hover {
-  height: 12rem;
+  height: 10.5rem;
   transition-duration: 0ms;
 }
 section .info .blurb:hover p {
