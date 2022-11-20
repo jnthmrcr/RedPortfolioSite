@@ -1,0 +1,156 @@
+@import 'normalize';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+@mixin simpleheader {
+	width: 40rem;
+	transition-duration: 300ms;
+	&:hover {
+		width: 44rem;
+		transition-duration: 0ms;
+	}
+}
+
+body {
+	background: linear-gradient(to bottom, #02102c, #9d0900) fixed;
+	color: white;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+
+header {
+	position: relative;
+	font-family: 'Roboto Serif', 'Times New Roman', Times, serif;
+	margin: auto;
+	margin-top: 8rem;
+	// width: 40rem;
+	height: 7rem;
+	background: linear-gradient(to bottom, #040507, #0c162442);
+
+	// div {
+	// 	position: absolute;
+	// 	background: linear-gradient(to bottom, #040507, #0c162442);
+	// 	bottom: 1rem;
+	// 	height: 7rem;
+
+	@include simpleheader();
+
+	h1 {
+		position: absolute;
+		font-weight: 500;
+		font-size: 6rem;
+		margin: 0;
+		bottom: 3rem;
+		left: 0;
+		right: 0;
+	}
+	p {
+		position: absolute;
+		bottom: 0.5rem;
+		left: 0;
+		right: 0;
+	}
+	// }
+}
+
+main {
+	margin: 0 auto;
+	width: 60rem;
+	position: relative;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	transition-duration: 1s;
+	margin: 2.5rem auto;
+
+	&:hover {
+		.heading {
+			// height: 3.25rem;
+		}
+	}
+
+	.heading {
+		background: linear-gradient(to bottom, #040507, #0c162442);
+		height: 3rem;
+		// margin: 0.3rem calc(10rem + 0.3rem) 0.3rem calc(10rem + 0.3rem);
+		position: relative;
+		transition-duration: 1s;
+		border-radius: 0.2rem;
+		// width: 40rem;
+		margin: auto;
+		@include simpleheader();
+
+		h2 {
+			font-family: 'Roboto Serif', 'Times New Roman', Times, serif;
+			font-size: 3.5rem;
+			font-weight: 400;
+			margin: auto;
+			position: absolute;
+			// top: 50%;
+			// left: 50%;
+			// transform: translate(-50%, -50%);
+			bottom: 0.5rem;
+			left: 0;
+			right: 0;
+		}
+
+		// &:hover {
+		// 	// height: 5.25rem;
+		// 	width: 44rem;
+		// }
+	}
+
+	.info {
+		margin: 0;
+		// display: flex;
+		// flex-direction: row;
+		// width: 100%;
+		// flex-grow: 1;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-content: space-between;
+		height: 14rem;
+
+		&:hover {
+			// height: 13rem;
+		}
+		.blurb {
+			background: linear-gradient(to bottom, #040507, #0c162442);
+			// flex-grow: 1;
+			// width: calc(33% - 0.3rem);
+			margin: 0.3rem;
+			padding: 1rem;
+			border-radius: 0.2rem;
+			text-align: left;
+			height: 10rem;
+			h3 {
+				font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+				font-weight: 400;
+				margin: 0 0 1rem 0;
+			}
+			p {
+				font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+				font-weight: 300;
+				opacity: 70%;
+			}
+			outline: 0.2rem rgba(255, 220, 130, 0.5) none;
+			outline-offset: -0.3rem;
+			transition-duration: 300ms;
+
+			&:hover {
+				// width: 20%;
+				// outline: 0.2rem rgba(255, 220, 130, 0.5) solid;
+				// outline-offset: 0.2rem;
+				// filter:drop-shadow(5px 5px 5px);
+				height: 12rem;
+				transition-duration: 0ms;
+				p {
+					opacity: 100%;
+				}
+			}
+		}
+	}
+}
