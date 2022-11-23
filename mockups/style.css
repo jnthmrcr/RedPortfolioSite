@@ -338,12 +338,21 @@ template {
   display: none;
 }
 
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   background: linear-gradient(to bottom, #02102c, #9d0900) fixed;
   color: white;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-align: center;
+  perspective: 100px;
+  overflow-x: hidden;
+  transform-style: preserve-3d;
+  height: 100%;
 }
 
 header {
@@ -459,6 +468,37 @@ section .info .blurb:hover {
 }
 section .info .blurb:hover p {
   opacity: 100%;
+}
+
+#deco {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  left: 50%;
+}
+#deco .deco-cross {
+  display: block;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+#deco .deco-cross::before {
+  background-color: #c38d0088;
+  content: "";
+  display: block;
+  transform: translateX(-1.4rem);
+  width: 3rem;
+  height: 0.2rem;
+  border-radius: 1rem;
+}
+#deco .deco-cross::after {
+  background-color: #c38d0088;
+  content: "";
+  display: block;
+  transform: translateY(-1.6rem);
+  width: 0.2rem;
+  height: 3rem;
+  border-radius: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
