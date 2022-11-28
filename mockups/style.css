@@ -354,6 +354,7 @@ body {
   overflow-x: hidden;
   transform-style: preserve-3d;
   height: 100%;
+  padding: var(--margin-width);
 }
 
 header {
@@ -366,7 +367,6 @@ header {
   max-width: 100%;
   transition-duration: 300ms;
   text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
-  max-width: calc(100% - 2 * var(--margin-width));
 }
 header:hover {
   width: 41rem;
@@ -402,8 +402,7 @@ section {
   align-items: center;
   transition-duration: 1s;
   margin: 2.5rem auto;
-  max-width: calc(100% - 2 * var(--margin-width));
-  padding: 0 var(--margin-width);
+  max-width: 100%;
 }
 section .heading {
   background: linear-gradient(to bottom, #040507, #0c162442);

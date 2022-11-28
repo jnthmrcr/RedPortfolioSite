@@ -32,6 +32,7 @@ body {
 	overflow-x: hidden;
 	transform-style: preserve-3d;
 	height: 100%;
+	padding: var(--margin-width);
 }
 
 header {
@@ -44,7 +45,7 @@ header {
 
 	@include simpleheader();
 	@include title-glow();
-	max-width: calc(100% - calc(2 * var(--margin-width)));
+	// max-width: calc(100% - calc(2 * var(--margin-width)));
 
 	h1 {
 		position: absolute;
@@ -74,8 +75,7 @@ section {
 	align-items: center;
 	transition-duration: 1s;
 	margin: 2.5rem auto;
-	max-width: calc(100% - calc(2 * var(--margin-width)));
-	padding: 0 var(--margin-width);
+	max-width: 100%;
 
 	.heading {
 		background: linear-gradient(to bottom, #040507, #0c162442);
