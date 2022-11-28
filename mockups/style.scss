@@ -3,6 +3,7 @@
 
 @mixin simpleheader {
 	width: 40rem;
+	max-width: 100%;
 	transition-duration: 300ms;
 	&:hover {
 		width: 41rem;
@@ -19,6 +20,7 @@
 html {
 	height: 100%;
 	overflow: hidden;
+	--margin-width: 0.5rem;
 }
 body {
 	background: linear-gradient(to bottom, #02102c, #9d0900) fixed;
@@ -40,14 +42,9 @@ header {
 	height: 7rem;
 	background: linear-gradient(to bottom, #040507, #0c162442);
 
-	// div {
-	// 	position: absolute;
-	// 	background: linear-gradient(to bottom, #040507, #0c162442);
-	// 	bottom: 1rem;
-	// 	height: 7rem;
-
 	@include simpleheader();
 	@include title-glow();
+	max-width: calc(100% - calc(2 * var(--margin-width)));
 
 	h1 {
 		position: absolute;
@@ -64,26 +61,21 @@ header {
 		left: 0;
 		right: 0;
 	}
-	// }
 }
 
 main {
 	margin: 0 auto;
-	width: 60rem;
 	position: relative;
 }
 
 section {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	transition-duration: 1s;
 	margin: 2.5rem auto;
-
-	&:hover {
-		.heading {
-			// height: 3.25rem;
-		}
-	}
+	max-width: calc(100% - calc(2 * var(--margin-width)));
+	padding: 0 var(--margin-width);
 
 	.heading {
 		background: linear-gradient(to bottom, #040507, #0c162442);
@@ -93,7 +85,7 @@ section {
 		transition-duration: 1s;
 		border-radius: 0.2rem;
 		// width: 40rem;
-		margin: auto auto 0.3rem auto;
+		margin-bottom: var(--margin-width);
 		@include simpleheader();
 		@include title-glow();
 
@@ -103,37 +95,24 @@ section {
 			font-weight: 400;
 			margin: auto;
 			position: absolute;
-			// top: 50%;
-			// left: 50%;
-			// transform: translate(-50%, -50%);
 			bottom: 0.5rem;
 			left: 0;
 			right: 0;
 			cursor: pointer;
-
 		}
-		
 	}
 
 	.info {
-		margin: 0;
-		// display: flex;
-		// flex-direction: row;
-		// width: 100%;
-		// flex-grow: 1;
+		margin: auto;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		justify-content: space-between;
+		grid-gap: var(--margin-width);
 		height: 14rem;
+		width: 60rem;
+		max-width: 100%;
 
-		&:hover {
-			// height: 13rem;
-		}
 		.blurb {
 			background: linear-gradient(to bottom, #040507, #0c162442);
-			// flex-grow: 1;
-			// width: calc(33% - 0.3rem);
-			margin: 0.3rem;
 			padding: 1rem;
 			border-radius: 0.2rem;
 			text-align: left;
@@ -156,10 +135,6 @@ section {
 			transition-duration: 300ms;
 
 			&:hover {
-				// width: 20%;
-				// outline: 0.2rem rgba(255, 220, 130, 0.5) solid;
-				// outline-offset: 0.2rem;
-				// filter:drop-shadow(5px 5px 5px);
 				height: 10.5rem;
 				transition-duration: 0ms;
 				p {
@@ -205,6 +180,17 @@ section {
 		width: 0.2rem;
 		height: 3rem;
 		border-radius: 1rem;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	section {
+		.heading {
+			// margin: 0.3rem;
+		}
+		.info {
+
 		}
 	}
 }
