@@ -191,12 +191,55 @@ section {
 }
 
 @media screen and (max-width: 768px) {
+	header {
+		h1 {
+			font-size: 3rem;
+		}
+	}
+
 	section {
+		margin: 3.5rem auto;
 		.heading {
-			// margin: 0.3rem;
+			height:2rem;
+			margin-bottom: calc(var(--margin-width) + 0.5rem);
+			h2 {
+				font-size: 2.5rem;
+				text-align: left;
+				margin-left: 1rem;
+			}
 		}
 		.info {
+			grid-template-columns: none;
+			grid-template-rows: repeat(10rem);
+			height: auto;
+			.blurb {
+				padding: 0.75rem;
+				height: 8rem;
+				@include dark-gradient-bg(0.75);
+				&:hover {
+					height: 8rem;
+				}
 
+				img {
+					height: auto;
+					width: 260%;
+				}
+				&:first-child {
+					@include dark-gradient-bg();
+					img {
+						
+					}
+				}
+				&:last-child {
+					@include dark-gradient-bg(0.5);
+					img {
+
+					}
+				}
+				p {
+					margin-left: var(--margin-width);
+				}
+			}
 		}
 	}
 }
