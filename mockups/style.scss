@@ -5,6 +5,8 @@
 	width: 40rem;
 	max-width: 100%;
 	transition-duration: 300ms;
+	white-space: nowrap;
+
 	&:hover {
 		width: 41rem;
 		transition-duration: 0ms;
