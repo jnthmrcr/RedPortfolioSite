@@ -118,6 +118,7 @@ section {
 		max-width: 100%;
 
 		.blurb {
+			position: relative;
 			@include dark-gradient-bg();
 			padding: 1rem;
 			border-radius: 0.2rem;
@@ -125,7 +126,7 @@ section {
 			height: 10rem;
 			cursor: pointer;
 			@include title-glow();
-
+			overflow: clip;
 			h3 {
 				font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
 				font-weight: 400;
@@ -136,6 +137,39 @@ section {
 				font-weight: 300;
 				opacity: 70%;
 			}
+			img {
+				margin: auto;
+				position: absolute;
+				top: 50%;
+				bottom: auto;
+				left: 50%;
+				right: auto;
+				height: 260%;
+				width: auto;
+				transform: translate(-50%,-50%);
+				z-index: -1;
+				mix-blend-mode: overlay;
+				filter: grayscale(1);
+			}
+			&:first-child {
+				img {
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: auto;
+					transform: none;
+				}
+			}
+			&:last-child {
+				img {
+					top: 0;
+					bottom: 0;
+					left: auto;
+					right: 0;
+					transform: none;
+				}
+			}
+
 			outline: 0.2rem rgba(255, 220, 130, 0.5) none;
 			outline-offset: -0.3rem;
 			transition-duration: 300ms;
