@@ -37,9 +37,9 @@ body {
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	font-weight: 400;
 	text-align: center;
-	perspective: 100px;
+	// perspective: 100px;
 	overflow-x: hidden;
-	transform-style: preserve-3d;
+	// transform-style: preserve-3d;
 	height: 100%;
 	padding: var(--margin-width);
 }
@@ -54,7 +54,6 @@ header {
 
 	@include simpleheader();
 	@include title-glow();
-	// max-width: calc(100% - calc(2 * var(--margin-width)));
 
 	h1 {
 		position: absolute;
@@ -89,11 +88,9 @@ section {
 	.heading {
 		@include dark-gradient-bg();
 		height: 3rem;
-		// margin: 0.3rem calc(10rem + 0.3rem) 0.3rem calc(10rem + 0.3rem);
 		position: relative;
 		transition-duration: 1s;
 		border-radius: 0.2rem;
-		// width: 40rem;
 		margin-bottom: var(--margin-width);
 		@include simpleheader();
 		@include title-glow();
