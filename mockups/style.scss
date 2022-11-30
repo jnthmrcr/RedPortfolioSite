@@ -20,6 +20,12 @@
 		text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 	}
 }
+}
+
+@mixin dark-gradient-bg($oap:1) {
+	background: linear-gradient(to bottom, rgb(4, 5, 7, $oap), rgba(12, 22, 36, 0.259));
+}
+
 html {
 	height: 100%;
 	overflow: hidden;
@@ -44,7 +50,7 @@ header {
 	margin: 8rem auto 4rem auto;
 	// width: 40rem;
 	height: 7rem;
-	background: linear-gradient(to bottom, #040507, #0c162442);
+	@include dark-gradient-bg();
 
 	@include simpleheader();
 	@include title-glow();
@@ -81,7 +87,7 @@ section {
 	max-width: 100%;
 
 	.heading {
-		background: linear-gradient(to bottom, #040507, #0c162442);
+		@include dark-gradient-bg();
 		height: 3rem;
 		// margin: 0.3rem calc(10rem + 0.3rem) 0.3rem calc(10rem + 0.3rem);
 		position: relative;
@@ -115,7 +121,7 @@ section {
 		max-width: 100%;
 
 		.blurb {
-			background: linear-gradient(to bottom, #040507, #0c162442);
+			@include dark-gradient-bg();
 			padding: 1rem;
 			border-radius: 0.2rem;
 			text-align: left;
