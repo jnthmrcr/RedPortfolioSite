@@ -12,8 +12,11 @@
 }
 
 @mixin title-glow {
+	h1, h2, h3 {
 	text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
+	}
 	&:hover {
+		h1, h2, h3 {
 		text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 	}
 }
