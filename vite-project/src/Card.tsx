@@ -5,7 +5,7 @@ export interface CardProps {
 }
 export function Card({title, body, img}: CardProps): JSX.Element {
 	return(
-	<div>
+	<div className="section-card">
 		<img src="" alt="woopsie"/>
 		<h3>{title}</h3>
 		<p>{body}</p>

@@ -1,0 +1,68 @@
+.section-card {
+	position: relative;
+	@include dark-gradient-bg();
+	padding: 1rem;
+	border-radius: 0.2rem;
+	text-align: left;
+	height: 10rem;
+	cursor: pointer;
+	@include title-glow();
+	overflow: clip;
+	h3 {
+		font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+		font-weight: 400;
+		margin: 0 0 1rem 0;
+	}
+	p {
+		font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+		font-weight: 300;
+		opacity: 70%;
+	}
+	img {
+		margin: auto;
+		position: absolute;
+		top: 50%;
+		bottom: auto;
+		left: 50%;
+		right: auto;
+		height: auto;
+		width: 300%;
+		transform: translate(-50%,-50%);
+		z-index: -1;
+		mix-blend-mode: overlay;
+		filter: grayscale(1) blur(2px);
+		opacity: 0.5;
+	}
+	&:first-child {
+		img {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: auto;
+			transform: none;
+		}
+	}
+	&:last-child {
+		img {
+			top: 0;
+			bottom: 0;
+			left: auto;
+			right: 0;
+			transform: none;
+		}
+	}
+
+	transition-duration: 300ms;
+
+	&:hover {
+		height: 10.5rem;
+		transition-duration: 0ms;
+		p {
+			opacity: 100%;
+		}
+		img {
+			filter: grayscale(0.8) blur(2px);
+			opacity: 0.9;
+		}
+	}
+}

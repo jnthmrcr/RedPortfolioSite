@@ -1,0 +1,27 @@
+@mixin simpleheader {
+	width: 40rem;
+	max-width: 100%;
+	transition-duration: 300ms;
+	white-space: nowrap;
+
+	&:hover {
+		width: 41rem;
+		transition-duration: 0ms;
+	}
+}
+
+@mixin title-glow {
+	h1, h2, h3 {
+		text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
+	}
+	&:hover {
+		h1, h2, h3 {
+			text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
+		}
+	}
+}
+
+@mixin dark-gradient-bg($oap:1) {
+	background: linear-gradient(to bottom, rgb(4, 5, 7, $oap), rgba(12, 22, 36, 0.259));
+	box-shadow: 0 -1px 8px inset #0004;
+}

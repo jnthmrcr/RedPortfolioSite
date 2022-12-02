@@ -1,0 +1,29 @@
+:root {
+	--margin-width: 0.5rem;
+}
+
+html {
+	height: 100%;
+	overflow: hidden;
+}
+body {
+	//#02102c, #9d0900
+	background: linear-gradient(to bottom, #00104b, #9d0900) fixed;
+	color: white;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	text-align: center;
+	overflow-x: hidden;
+	height: 100%;
+	padding: var(--margin-width);
+
+	&>div {
+		margin: auto;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@import 'App';
+@import 'Section';
+@import 'Card';
