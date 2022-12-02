@@ -1,4 +1,5 @@
 import { Card, CardProps } from "./Card";
+import './style.css'
 
 interface SectionInfo {
 	c1: CardProps;
@@ -16,9 +17,11 @@ export function Section({props}: SectionProps) {
 	return(
 		<section>
 			<div className="heading"><h2>heading</h2></div>
-			<Card title="lmao" body={lorem}/>
-			<Card title="title" body={lorem}/>
-			<Card title="title" body={lorem}/>
+			<div className="info">
+				<Card title="lmao" body={lorem}/>
+				<Card title="title" body={lorem}/>
+				<Card title="title" body={lorem}/>
+			</div>
 		</section>
 	);
 }
