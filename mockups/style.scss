@@ -257,8 +257,8 @@ section {
 				}
 
 				img {
-					height: auto;
-					width: 260%;
+					height: 300%;
+					width: auto;
 				}
 				&:first-child {
 					@include dark-gradient-bg();
