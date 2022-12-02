@@ -26,6 +26,7 @@
 
 @mixin dark-gradient-bg($oap:1) {
 	background: linear-gradient(to bottom, rgb(4, 5, 7, $oap), rgba(12, 22, 36, 0.259));
+	box-shadow: 0 -1px 8px inset #0004;
 }
 
 html {
@@ -34,7 +35,8 @@ html {
 	--margin-width: 0.5rem;
 }
 body {
-	background: linear-gradient(to bottom, #02102c, #9d0900) fixed;
+	//#02102c, #9d0900
+	background: linear-gradient(to bottom, #00104b, #9d0900) fixed;
 	color: white;
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	font-weight: 400;
