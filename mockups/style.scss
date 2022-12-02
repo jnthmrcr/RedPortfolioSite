@@ -146,12 +146,13 @@ section {
 				bottom: auto;
 				left: 50%;
 				right: auto;
-				height: 260%;
-				width: auto;
+				height: auto;
+				width: 300%;
 				transform: translate(-50%,-50%);
 				z-index: -1;
 				mix-blend-mode: overlay;
-				filter: grayscale(1);
+				filter: grayscale(1) blur(2px);
+				opacity: 0.5;
 			}
 			&:first-child {
 				img {
@@ -181,6 +182,10 @@ section {
 				transition-duration: 0ms;
 				p {
 					opacity: 100%;
+				}
+				img {
+					filter: grayscale(0.8) blur(2px);
+					opacity: 0.9;
 				}
 			}
 		}
