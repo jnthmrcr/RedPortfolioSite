@@ -345,14 +345,12 @@ html {
 }
 
 body {
-  background: linear-gradient(to bottom, #02102c, #9d0900) fixed;
+  background: linear-gradient(to bottom, #00104b, #9d0900) fixed;
   color: white;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-align: center;
-  perspective: 100px;
   overflow-x: hidden;
-  transform-style: preserve-3d;
   height: 100%;
   padding: var(--margin-width);
 }
@@ -362,17 +360,21 @@ header {
   font-family: "Roboto Serif", "Times New Roman", Times, serif;
   margin: 8rem auto 4rem auto;
   height: 7rem;
-  background: linear-gradient(to bottom, #040507, #0c162442);
+  background: linear-gradient(to bottom, #040507, rgba(12, 22, 36, 0.259));
+  box-shadow: 0 -1px 8px inset #0004;
   width: 40rem;
   max-width: 100%;
   transition-duration: 300ms;
-  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
+  white-space: nowrap;
 }
 header:hover {
   width: 41rem;
   transition-duration: 0ms;
 }
-header:hover {
+header h1, header h2, header h3 {
+  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
+}
+header:hover h1, header:hover h2, header:hover h3 {
   text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
 header h1 {
@@ -405,7 +407,8 @@ section {
   max-width: 100%;
 }
 section .heading {
-  background: linear-gradient(to bottom, #040507, #0c162442);
+  background: linear-gradient(to bottom, #040507, rgba(12, 22, 36, 0.259));
+  box-shadow: 0 -1px 8px inset #0004;
   height: 3rem;
   position: relative;
   transition-duration: 1s;
@@ -414,13 +417,16 @@ section .heading {
   width: 40rem;
   max-width: 100%;
   transition-duration: 300ms;
-  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
+  white-space: nowrap;
 }
 section .heading:hover {
   width: 41rem;
   transition-duration: 0ms;
 }
-section .heading:hover {
+section .heading h1, section .heading h2, section .heading h3 {
+  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
+}
+section .heading:hover h1, section .heading:hover h2, section .heading:hover h3 {
   text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
 section .heading h2 {
@@ -444,18 +450,23 @@ section .info {
   max-width: 100%;
 }
 section .info .blurb {
-  background: linear-gradient(to bottom, #040507, #0c162442);
+  position: relative;
+  background: linear-gradient(to bottom, #040507, rgba(12, 22, 36, 0.259));
+  box-shadow: 0 -1px 8px inset #0004;
   padding: 1rem;
   border-radius: 0.2rem;
   text-align: left;
   height: 10rem;
   cursor: pointer;
-  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
+  overflow: clip;
   outline: 0.2rem rgba(255, 220, 130, 0.5) none;
   outline-offset: -0.3rem;
   transition-duration: 300ms;
 }
-section .info .blurb:hover {
+section .info .blurb h1, section .info .blurb h2, section .info .blurb h3 {
+  text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
+}
+section .info .blurb:hover h1, section .info .blurb:hover h2, section .info .blurb:hover h3 {
   text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
 section .info .blurb h3 {
@@ -468,6 +479,35 @@ section .info .blurb p {
   font-weight: 300;
   opacity: 70%;
 }
+section .info .blurb img {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  height: auto;
+  width: 300%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  mix-blend-mode: overlay;
+  filter: grayscale(1) blur(2px);
+  opacity: 0.5;
+}
+section .info .blurb:first-child img {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  transform: none;
+}
+section .info .blurb:last-child img {
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  transform: none;
+}
 section .info .blurb:hover {
   height: 10.5rem;
   transition-duration: 0ms;
@@ -475,9 +515,12 @@ section .info .blurb:hover {
 section .info .blurb:hover p {
   opacity: 100%;
 }
+section .info .blurb:hover img {
+  filter: grayscale(0.8) blur(2px);
+  opacity: 0.9;
+}
 
 #deco {
-  transform-style: preserve-3d;
   position: absolute;
   top: 0;
   z-index: -1;
@@ -486,7 +529,6 @@ section .info .blurb:hover p {
 #deco .deco-cross {
   display: block;
   position: absolute;
-  transform-style: preserve-3d;
 }
 #deco .deco-cross::before {
   background-color: #c38d0088;
@@ -505,6 +547,54 @@ section .info .blurb:hover p {
   width: 0.2rem;
   height: 3rem;
   border-radius: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 3rem;
+  }
+
+  section {
+    margin: 3.5rem auto;
+  }
+  section .heading {
+    height: 2rem;
+    margin-bottom: calc(var(--margin-width) + 0.5rem);
+  }
+  section .heading h2 {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-left: 1rem;
+  }
+  section .info {
+    grid-template-columns: none;
+    grid-template-rows: repeat(10rem);
+    height: auto;
+  }
+  section .info .blurb {
+    padding: 0.75rem;
+    height: 8rem;
+    background: linear-gradient(to bottom, rgba(4, 5, 7, 0.75), rgba(12, 22, 36, 0.259));
+    box-shadow: 0 -1px 8px inset #0004;
+  }
+  section .info .blurb:hover {
+    height: 8rem;
+  }
+  section .info .blurb img {
+    height: 300%;
+    width: auto;
+  }
+  section .info .blurb:first-child {
+    background: linear-gradient(to bottom, #040507, rgba(12, 22, 36, 0.259));
+    box-shadow: 0 -1px 8px inset #0004;
+  }
+  section .info .blurb:last-child {
+    background: linear-gradient(to bottom, rgba(4, 5, 7, 0.5), rgba(12, 22, 36, 0.259));
+    box-shadow: 0 -1px 8px inset #0004;
+  }
+  section .info .blurb p {
+    margin-left: var(--margin-width);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
