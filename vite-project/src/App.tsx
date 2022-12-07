@@ -3,9 +3,14 @@ import reactLogo from './assets/react.svg'
 import './style.css'
 import { Section } from './Section'
 
-
 function App() {
-  const [count, setCount] = useState(0)
+	const [page, setPage] = useState<'home'|'section'|'contact'>('home');
+	const [section, setSection] = useState<number>(0);
+
+	const sectionClickAction = (sectionIndex: number, cardIndex: number) => {
+		setSection(sectionIndex);
+		console.log(sectionIndex, cardIndex);
+	}
 
   return (
     <div>
@@ -14,9 +19,9 @@ function App() {
 			<p>email address</p>
 		</header>
 		<main>
-			<Section/>
-			<Section/>
-			<Section/>
+			<Section sectionIndex={0} clickHandler={sectionClickAction}/>
+			<Section sectionIndex={1} clickHandler={sectionClickAction}/>
+			<Section sectionIndex={2} clickHandler={sectionClickAction}/>
 		</main>
 	</div>
   )
