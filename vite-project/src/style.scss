@@ -11,7 +11,7 @@ html {
 }
 body {
 	//#02102c, #9d0900
-	background: linear-gradient(to bottom, #00104b, #9d0900) fixed;
+	background: linear-gradient(to bottom, #00104b, #b40900) fixed;
 	color: white;
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	font-weight: 400;
@@ -31,3 +31,4 @@ body {
 @import 'App';
 @import 'Section';
 @import 'Card';
+@import 'SectionBody';

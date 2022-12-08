@@ -8,6 +8,7 @@ function App() {
 	const [section, setSection] = useState<number>(0);
 
 	const sectionClickAction = (sectionIndex: number, cardIndex: number) => {
+		setPage('section');
 		setSection(sectionIndex);
 		console.log(sectionIndex, cardIndex);
 	}
@@ -19,9 +20,9 @@ function App() {
 			<p>email address</p>
 		</header>
 		<main>
-			<Section sectionIndex={0} clickHandler={sectionClickAction}/>
-			<Section sectionIndex={1} clickHandler={sectionClickAction}/>
-			<Section sectionIndex={2} clickHandler={sectionClickAction}/>
+			<Section sectionIndex={1} clickHandler={sectionClickAction} activeSection={section}/>
+			<Section sectionIndex={2} clickHandler={sectionClickAction} activeSection={section}/>
+			<Section sectionIndex={3} clickHandler={sectionClickAction} activeSection={section}/>
 		</main>
 	</div>
   )

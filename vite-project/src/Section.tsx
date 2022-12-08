@@ -4,6 +4,7 @@ import './style.css'
 interface SectionInfo {
 	sectionIndex: number;
 	clickHandler: (index:number, cardIndex: number) => void;
+	activeSection?: number;
 	// c1: CardProps;
 	// c2: CardProps;
 	// c3: CardProps;
@@ -13,7 +14,7 @@ export interface SectionProps {
 	props?: SectionInfo
 }
 
-export function Section({sectionIndex, clickHandler}:SectionInfo) {
+export function Section({sectionIndex, clickHandler, activeSection}:SectionInfo) {
 	const lorem: string = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, amet.";
 
 	const sectionClick = (cardIndex: number) => {
@@ -30,8 +31,22 @@ export function Section({sectionIndex, clickHandler}:SectionInfo) {
 		);
 	}
 
+	const sectionPosition = () => {
+		if (sectionIndex === activeSection) {
+			return -2.5;
+		}
+		return -21.5 + 19 * sectionIndex;
+	}
+
+	const opacity = () => {
+		if (sectionIndex === activeSection) {
+			return 1
+		}
+		return 0
+	}
+
 	return(
-		<section>
+		<section style={{top: sectionPosition() + 'rem', opacity: opacity()}}>
 			<div className="heading" onClick={()=>sectionClick(0)}><h2>heading</h2></div>
 			<div className="info">
 				{renderCard('title', lorem, 1)}

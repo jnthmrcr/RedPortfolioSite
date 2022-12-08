@@ -1,0 +1,19 @@
+.section-body {
+	width: 100%;
+	background-color: magenta;
+	height: 10vh;
+
+
+	&.hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&.left {
+		transform: translateX(-60rem);
+	}
+
+	&.right {
+		transform: translateX(60rem);
+	}
+}
