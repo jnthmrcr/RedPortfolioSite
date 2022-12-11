@@ -1,28 +1,42 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './style.css'
-import { Section } from './Section'
+import { Section, sectionDisplayType } from './Section'
 
 function App() {
 	const [page, setPage] = useState<'home'|'section'|'contact'>('home');
-	const [section, setSection] = useState<number>(0);
+	const [activeSection, setActiveSection] = useState<number>(0);
 
 	const sectionClickAction = (sectionIndex: number, cardIndex: number) => {
 		setPage('section');
-		setSection(sectionIndex);
+		setActiveSection(sectionIndex);
 		console.log(sectionIndex, cardIndex);
+	}
+
+	const renderSection = (sectionIndex:number) => {
+		let display = sectionDisplayType.cards;
+		if (page === 'section') {
+			//are we active tho?
+			if (sectionIndex === activeSection)
+				display = sectionDisplayType.body;
+			else
+				display = sectionDisplayType.hidden;
+		}
+		return <Section sectionIndex={sectionIndex} clickHandler={sectionClickAction} sectionDisplay={display}/>
 	}
 
   return (
     <div>
 		<header>
+			{/* return */}
 			<h1>J A Mercer</h1>
-			<p>email address</p>
+			<p>software developer with experience in react, django, and unity contact me</p>
+			{/* contact me */}
 		</header>
 		<main>
-			<Section sectionIndex={1} clickHandler={sectionClickAction} activeSection={section}/>
-			<Section sectionIndex={2} clickHandler={sectionClickAction} activeSection={section}/>
-			<Section sectionIndex={3} clickHandler={sectionClickAction} activeSection={section}/>
+			{renderSection(1)}
+			{renderSection(2)}
+			{renderSection(3)}
 		</main>
 	</div>
   )

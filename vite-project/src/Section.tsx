@@ -1,10 +1,17 @@
 import { Card, CardProps } from "./Card";
+import SectionBody from "./SectionBody";
 import './style.css'
+
+export enum sectionDisplayType {
+	body,
+	hidden,
+	cards,
+}
 
 interface SectionInfo {
 	sectionIndex: number;
 	clickHandler: (index:number, cardIndex: number) => void;
-	activeSection?: number;
+	sectionDisplay: sectionDisplayType;
 	// c1: CardProps;
 	// c2: CardProps;
 	// c3: CardProps;
@@ -14,7 +21,7 @@ export interface SectionProps {
 	props?: SectionInfo
 }
 
-export function Section({sectionIndex, clickHandler, activeSection}:SectionInfo) {
+export function Section({sectionIndex, clickHandler, sectionDisplay}:SectionInfo) {
 	const lorem: string = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, amet.";
 
 	const sectionClick = (cardIndex: number) => {
@@ -23,7 +30,7 @@ export function Section({sectionIndex, clickHandler, activeSection}:SectionInfo)
 
 	const renderCard = (title:string, body:string, index:number) => {
 		return (
-			<div className="section-card" onClick={()=>sectionClick(index)}>
+			<div className="section-card" onClick={()=>sectionClick(index)} key={index}>
 				<img src="" alt="woopsie"/>
 				<h3>{title}</h3>
 				<p>{body}</p>
@@ -31,28 +38,31 @@ export function Section({sectionIndex, clickHandler, activeSection}:SectionInfo)
 		);
 	}
 
-	const sectionPosition = () => {
-		if (sectionIndex === activeSection) {
-			return -2.5;
+	const sectionStyle = (sectionDisplay: sectionDisplayType) => {
+		const style = {
+			top: ((sectionDisplay === sectionDisplayType.body)?-2.5:-21.5+(19*sectionIndex))+'rem',
+			opacity: (sectionDisplay === sectionDisplayType.hidden)?0:1,
 		}
-		return -21.5 + 19 * sectionIndex;
+		return style;
 	}
 
-	const opacity = () => {
-		if (sectionIndex === activeSection) {
-			return 1
+	const renderSectionContent = () => {
+		if (sectionDisplay === sectionDisplayType.body) {
+			return <SectionBody/>
 		}
-		return 0
-	}
-
-	return(
-		<section style={{top: sectionPosition() + 'rem', opacity: opacity()}}>
-			<div className="heading" onClick={()=>sectionClick(0)}><h2>heading</h2></div>
+		return (
 			<div className="info">
 				{renderCard('title', lorem, 1)}
 				{renderCard('title', lorem, 2)}
 				{renderCard('title', lorem, 3)}
-			</div>
+			</div>);
+	}
+
+	return(
+		//onTransitionEnd={}
+		<section style={sectionStyle(sectionDisplay)} key={sectionIndex}>
+			<div className="heading" onClick={()=>sectionClick(0)}><h2>heading</h2></div>
+			{renderSectionContent()}
 		</section>
 	);
 }
