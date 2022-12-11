@@ -30,13 +30,19 @@ function App() {
 		<header>
 			{/* return */}
 			<h1>J A Mercer</h1>
-			<p>software developer with experience in react, django, and unity contact me</p>
+			<div>
+				<p>software developer with experience in react, django, and unity</p>
+				<nav>
+					<a>about</a> <a>contact me</a>
+				</nav>
+			</div>
 			{/* contact me */}
 		</header>
 		<main>
 			{renderSection(1)}
 			{renderSection(2)}
 			{renderSection(3)}
+			{/* <Section sectionIndex={0} clickHandler={}/> */}
 		</main>
 	</div>
   )
