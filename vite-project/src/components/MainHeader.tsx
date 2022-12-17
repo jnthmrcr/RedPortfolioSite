@@ -4,7 +4,7 @@ interface MainHeaderProps {
 
 export default function MainHeader({ clickHandler }: MainHeaderProps) {
 	return (
-		<header>
+		<header className="main-header">
 			<h1>J A Mercer</h1>
 			<div>
 				<p>software developer with experience in react, django, and unity</p>
