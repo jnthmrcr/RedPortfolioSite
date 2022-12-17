@@ -368,7 +368,7 @@ main {
   position: relative;
 }
 
-header {
+header.main-header {
   position: relative;
   font-family: "Roboto Serif", "Times New Roman", Times, serif;
   margin: 8rem auto 4rem auto;
@@ -380,17 +380,17 @@ header {
   transition-duration: 300ms;
   white-space: nowrap;
 }
-header:hover {
+header.main-header:hover {
   width: 41rem;
   transition-duration: 0ms;
 }
-header h1, header h2, header h3 {
+header.main-header h1, header.main-header h2, header.main-header h3 {
   text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
 }
-header:hover h1, header:hover h2, header:hover h3 {
+header.main-header:hover h1, header.main-header:hover h2, header.main-header:hover h3 {
   text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
-header h1 {
+header.main-header h1 {
   position: absolute;
   font-weight: 500;
   font-size: 6rem;
@@ -399,26 +399,25 @@ header h1 {
   left: 0;
   right: 0;
 }
-header > div {
+header.main-header > div {
   position: absolute;
   bottom: 0.5rem;
   left: 0;
   right: 0;
   width: 100%;
 }
-header > div nav {
+header.main-header > div nav {
   display: flex;
   justify-content: space-evenly;
   width: 32rem;
   max-width: 80%;
   margin: auto auto 0.5rem auto;
 }
-header > div nav a {
+header.main-header > div nav a {
   width: 10rem;
 }
 
 article {
-  position: absolute;
   top: -2.5rem;
   left: 0;
   right: 0;
@@ -429,7 +428,7 @@ article {
   margin: 2.5rem auto;
   max-width: 100%;
 }
-article .heading {
+article header {
   background: linear-gradient(to bottom, #040507, rgba(12, 22, 36, 0.259));
   box-shadow: 0 -1px 8px inset #0004;
   height: 3rem;
@@ -442,17 +441,17 @@ article .heading {
   transition-duration: 300ms;
   white-space: nowrap;
 }
-article .heading:hover {
+article header:hover {
   width: 41rem;
   transition-duration: 0ms;
 }
-article .heading h1, article .heading h2, article .heading h3 {
+article header h1, article header h2, article header h3 {
   text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
 }
-article .heading:hover h1, article .heading:hover h2, article .heading:hover h3 {
+article header:hover h1, article header:hover h2, article header:hover h3 {
   text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
-article .heading h2 {
+article header h2 {
   font-family: "Roboto Serif", "Times New Roman", Times, serif;
   font-size: 3.5rem;
   font-weight: 400;
@@ -463,7 +462,7 @@ article .heading h2 {
   right: 0;
   cursor: pointer;
 }
-article .info {
+article .card-group {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -472,11 +471,7 @@ article .info {
   width: 60rem;
   max-width: 100%;
 }
-article.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-.section-card {
+article .card-group section {
   position: relative;
   background: linear-gradient(to bottom, #040507, rgba(12, 22, 36, 0.259));
   box-shadow: 0 -1px 8px inset #0004;
@@ -488,23 +483,23 @@ article.hide {
   overflow: clip;
   transition-duration: 300ms;
 }
-.section-card h1, .section-card h2, .section-card h3 {
+article .card-group section h1, article .card-group section h2, article .card-group section h3 {
   text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
 }
-.section-card:hover h1, .section-card:hover h2, .section-card:hover h3 {
+article .card-group section:hover h1, article .card-group section:hover h2, article .card-group section:hover h3 {
   text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
-.section-card h3 {
+article .card-group section h3 {
   font-family: "Roboto Slab", "Times New Roman", Times, serif;
   font-weight: 400;
   margin: 0 0 1rem 0;
 }
-.section-card p {
+article .card-group section p {
   font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-weight: 300;
   opacity: 70%;
 }
-.section-card img {
+article .card-group section img {
   margin: auto;
   position: absolute;
   top: 50%;
@@ -519,30 +514,34 @@ article.hide {
   filter: grayscale(1) blur(2px);
   opacity: 0.5;
 }
-.section-card:first-child img {
+article .card-group section:first-child img {
   top: 0;
   bottom: 0;
   left: 0;
   right: auto;
   transform: none;
 }
-.section-card:last-child img {
+article .card-group section:last-child img {
   top: 0;
   bottom: 0;
   left: auto;
   right: 0;
   transform: none;
 }
-.section-card:hover {
+article .card-group section:hover {
   height: 10.5rem;
   transition-duration: 0ms;
 }
-.section-card:hover p {
+article .card-group section:hover p {
   opacity: 100%;
 }
-.section-card:hover img {
+article .card-group section:hover img {
   filter: grayscale(0.8) blur(2px);
   opacity: 0.9;
+}
+article.hide {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=Portfolio.css.map */

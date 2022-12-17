@@ -35,16 +35,24 @@ export default function ProjectArticle(props: ProjectProps) {
 			return renderArticle();
 		}
 		return (
-			<section>
-				{renderCard('title', 'body', 1)};
-				{renderCard('title', 'body', 2)};
-				{renderCard('title', 'body', 3)};
+			<section className="card-group">
+				{renderCard('title', 'body', 1)}
+				{renderCard('title', 'body', 2)}
+				{renderCard('title', 'body', 3)}
 			</section>
 		);
 	};
 
+	const style = () => {
+		if (props.displayState === ProjectDisplayState.article) {
+			return {transform: 'translateY('+props.projectIndex * -20+'rem)'};
+		} else if (props.displayState === ProjectDisplayState.hidden) {
+			return {opacity:0};
+		}
+	}
+
 	return (
-		<article onClick={()=> projectClick(props.projectIndex)}>
+		<article onClick={()=> projectClick(props.projectIndex)} style={style()}>
 			<header>
 				<h2>heading</h2>
 			</header>
