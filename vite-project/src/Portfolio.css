@@ -415,6 +415,7 @@ header.main-header > div nav {
 }
 header.main-header > div nav a {
   width: 10rem;
+  cursor: pointer;
 }
 
 article {
@@ -462,16 +463,18 @@ article header h2 {
   right: 0;
   cursor: pointer;
 }
-article .card-group {
+article > section {
+  width: 60rem;
+  max-width: 100%;
+}
+article section.card-group {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--margin-width);
   height: 14rem;
-  width: 60rem;
-  max-width: 100%;
 }
-article .card-group section {
+article section.card-group section {
   position: relative;
   background: linear-gradient(to bottom, #040507, rgba(12, 22, 36, 0.259));
   box-shadow: 0 -1px 8px inset #0004;
@@ -483,23 +486,23 @@ article .card-group section {
   overflow: clip;
   transition-duration: 300ms;
 }
-article .card-group section h1, article .card-group section h2, article .card-group section h3 {
+article section.card-group section h1, article section.card-group section h2, article section.card-group section h3 {
   text-shadow: 0 0px 2px transparent, 0 0 2px transparent, 0 4px 16px transparent;
 }
-article .card-group section:hover h1, article .card-group section:hover h2, article .card-group section:hover h3 {
+article section.card-group section:hover h1, article section.card-group section:hover h2, article section.card-group section:hover h3 {
   text-shadow: 0 0px 2px black, 0 0 2px black, 0 2px 8px white;
 }
-article .card-group section h3 {
+article section.card-group section h3 {
   font-family: "Roboto Slab", "Times New Roman", Times, serif;
   font-weight: 400;
   margin: 0 0 1rem 0;
 }
-article .card-group section p {
+article section.card-group section p {
   font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-weight: 300;
   opacity: 70%;
 }
-article .card-group section img {
+article section.card-group section img {
   margin: auto;
   position: absolute;
   top: 50%;
@@ -514,30 +517,33 @@ article .card-group section img {
   filter: grayscale(1) blur(2px);
   opacity: 0.5;
 }
-article .card-group section:first-child img {
+article section.card-group section:first-child img {
   top: 0;
   bottom: 0;
   left: 0;
   right: auto;
   transform: none;
 }
-article .card-group section:last-child img {
+article section.card-group section:last-child img {
   top: 0;
   bottom: 0;
   left: auto;
   right: 0;
   transform: none;
 }
-article .card-group section:hover {
+article section.card-group section:hover {
   height: 10.5rem;
   transition-duration: 0ms;
 }
-article .card-group section:hover p {
+article section.card-group section:hover p {
   opacity: 100%;
 }
-article .card-group section:hover img {
+article section.card-group section:hover img {
   filter: grayscale(0.8) blur(2px);
   opacity: 0.9;
+}
+article section.article-body {
+  background-color: lime;
 }
 article.hide {
   opacity: 0;
