@@ -9,9 +9,13 @@ export default function MainHeader({ clickHandler }: MainHeaderProps) {
 			<div>
 				<p>software developer with experience in react, django, and unity</p>
 				<nav>
-					<a>projects</a>
-					<a>about</a>
-					<a>contact me</a>
+					{/* <a >projects</a>
+					<a href="#about">about</a>
+					<a href="#contact">contact me</a> */}
+
+					<a onClick={()=>clickHandler('projects')}>projects</a>
+					<a onClick={()=>clickHandler('about')}>about</a>
+					<a onClick={()=>clickHandler('contact')}>contact me</a>
 				</nav>
 			</div>
 		</header>

@@ -344,6 +344,7 @@ template {
 html {
   height: 100%;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 body {

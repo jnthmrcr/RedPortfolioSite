@@ -1,8 +1,10 @@
-export enum ProjectDisplayState {
-	hidden,
-	cards,
-	article
-}
+// export enum ProjectDisplayState {
+// 	hidden,
+// 	cards,
+// 	article
+// }
+
+export type ProjectDisplayState = 'hidden'|'cards'|'article';
 
 export interface ProjectProps {
 	displayState: ProjectDisplayState;
@@ -27,11 +29,11 @@ export default function ProjectArticle(props: ProjectProps) {
 	};
 
 	const renderArticle = () => {
-		return <section>its a body</section>;
+		return <section className="article-body">its a body</section>;
 	};
 
 	const renderContent = () => {
-		if (props.displayState === ProjectDisplayState.article) {
+		if (props.displayState === 'article') {
 			return renderArticle();
 		}
 		return (
@@ -44,9 +46,9 @@ export default function ProjectArticle(props: ProjectProps) {
 	};
 
 	const style = () => {
-		if (props.displayState === ProjectDisplayState.article) {
+		if (props.displayState === 'article') {
 			return {transform: 'translateY('+props.projectIndex * -20+'rem)'};
-		} else if (props.displayState === ProjectDisplayState.hidden) {
+		} else if (props.displayState === 'hidden') {
 			return {opacity:0};
 		}
 	}

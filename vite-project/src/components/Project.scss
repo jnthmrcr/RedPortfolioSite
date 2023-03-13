@@ -34,14 +34,17 @@ article {
     }
   }
 
-  .card-group {
+  >section {
+	width: 60rem;
+	max-width: 100%;
+  }
+
+  section.card-group {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: var(--margin-width);
     height: 14rem;
-    width: 60rem;
-    max-width: 100%;
 
     section {
       position: relative;
@@ -111,6 +114,10 @@ article {
         }
       }
     }
+  }
+
+  section.article-body {
+	background-color: lime;
   }
 
   &.hide {

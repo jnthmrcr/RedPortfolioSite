@@ -1,23 +1,38 @@
-import { useState } from "react";
+import { useState, forwardRef, useImperativeHandle, ForwardedRef } from "react";
 import Project, { ProjectDisplayState } from "./Project";
+import { PortfolioSectionProps } from "../PortfolioSection";
 
-export default function AllProjects () {
-	const [activeProjectIndex, setActiveProjectIndex] = useState<number|'no selection'>('no selection')
+export interface AllProjectsRef {
+	resetProjects: ()=>void;
+}
+
+export const AllProjects = forwardRef<AllProjectsRef,PortfolioSectionProps>((props, ref) => {
 	
+	const [activeProjectIndex, setActiveProjectIndex] = useState<number|'no selection'>('no selection')
+
+	useImperativeHandle(ref,()=>{
+		return {
+		  resetProjects() {
+			setActiveProjectIndex('no selection');
+		  },
+		};
+	  }, []);
+
 	const projectClickAction = (projectIndex: number, sectionIndex: number) => {
 		setActiveProjectIndex(projectIndex);
 	}
 
-	const displayState = (index: number) => {
+	const displayState = (index: number):ProjectDisplayState => {
 		if (activeProjectIndex === 'no selection') {
-			return ProjectDisplayState.cards;
+			return 'cards';
 		}
 		if (index === activeProjectIndex) {
-			return ProjectDisplayState.article
+			return 'article';
 		}
-		return ProjectDisplayState.hidden;
+		return 'hidden';
 	}
 
+	if (!props.display) return (<div></div>)
 	return (
 		<section>
 			<Project displayState={displayState(0)} clickHandler={projectClickAction} projectIndex={0}/>
@@ -25,4 +40,6 @@ export default function AllProjects () {
 			<Project displayState={displayState(2)} clickHandler={projectClickAction} projectIndex={2}/>
 		</section>
 	);
-}
+});
+
+export default AllProjects;
