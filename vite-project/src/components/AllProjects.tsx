@@ -1,4 +1,4 @@
-import { useState, forwardRef, useImperativeHandle, ForwardedRef } from "react";
+import { useState, forwardRef, useImperativeHandle } from "react";
 import Project, { ProjectDisplayState } from "./Project";
 import { PortfolioSectionProps } from "../PortfolioSection";
 
