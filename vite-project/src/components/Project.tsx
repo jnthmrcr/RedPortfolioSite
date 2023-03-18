@@ -20,7 +20,7 @@ export default function ProjectArticle(props: ProjectProps) {
 	const renderCard = (title: string, body: string, index: number) => {
 		return (
 			// <section onClick={() => projectClick(index)} key={index}>
-			<section key={index}>
+			<section key={index} tabIndex={0}>
 				<img src="" alt="woopsie" />
 				<h3>{title}</h3>
 				<p>{body}</p>
@@ -55,7 +55,7 @@ export default function ProjectArticle(props: ProjectProps) {
 
 	return (
 		<article onClick={()=> projectClick(props.projectIndex)} style={style()}>
-			<header>
+			<header tabIndex={0}>
 				<h2>heading</h2>
 			</header>
 			{renderContent()}
