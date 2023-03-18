@@ -32,6 +32,16 @@ header.main-header {
 			a {
 				width: 10rem;
 				cursor: pointer;
+				text-decoration: none;
+				color: white;
+				&.active {
+					&::before {
+						content: '{ ';
+					}
+					&::after {
+						content: ' }';
+					}
+				}
 			}
 		}
 	}

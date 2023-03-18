@@ -417,6 +417,14 @@ header.main-header > div nav {
 header.main-header > div nav a {
   width: 10rem;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+header.main-header > div nav a.active::before {
+  content: "{ ";
+}
+header.main-header > div nav a.active::after {
+  content: " }";
 }
 
 article {
