@@ -421,10 +421,10 @@ header.main-header > div nav a {
   color: white;
 }
 header.main-header > div nav a.active::before {
-  content: "{ ";
+  content: "- ";
 }
 header.main-header > div nav a.active::after {
-  content: " }";
+  content: " -";
 }
 
 article {

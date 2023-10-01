@@ -36,10 +36,10 @@ header.main-header {
 				color: white;
 				&.active {
 					&::before {
-						content: '{ ';
+						content: '- ';
 					}
 					&::after {
-						content: ' }';
+						content: ' -';
 					}
 				}
 			}
