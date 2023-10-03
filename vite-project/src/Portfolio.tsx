@@ -3,9 +3,10 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import MainHeader from "./components/MainHeader";
 import AllProjects, {AllProjectsRef} from "./components/AllProjects";
+import Demos from "./components/Demos";
 import { useLoaderData } from "react-router-dom";
 
-type PortfolioPageName = 'projects'|'about'|'contact';
+export type PortfolioPageName = 'home'|'projects'|'demos'|'about'|'contact';
 interface PortfolioProps {page: PortfolioPageName};
 
 export default function Portfolio ({page}:PortfolioProps) {
@@ -37,9 +38,7 @@ export default function Portfolio ({page}:PortfolioProps) {
 			<MainHeader clickHandler={mainHeaderClickAction}/>
 			<main>
 				<AllProjects display={activePage ==='projects' || activePage==="home"} expand={activePage==='projects'} projectID={loaderData} ref={AllProjRef}/>
-				<AllProjects display={activePage ==='projects'} ref={AllProjRef}/>
-				<About display={activePage!=='contact'}/>
-				<Contact display={true}/>
+				<Demos display={activePage!=='contact' && activePage !== 'about'} expand={activePage==='demos' || activePage==='projects'}/>
 				<About display={activePage!=='contact'} expand={activePage==='about'}/>
 				<Contact display={true} expand={activePage==='contact'}/>
 			</main>
