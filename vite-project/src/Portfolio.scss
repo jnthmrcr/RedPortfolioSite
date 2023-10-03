@@ -32,6 +32,11 @@ main {
 	margin: 0 auto;
 	position: relative;
 }
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+}
 
 @import 'components/About.scss';
 @import 'components/AllProjects.scss';
