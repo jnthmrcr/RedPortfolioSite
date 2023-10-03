@@ -4,6 +4,8 @@
 // 	article
 // }
 
+import { Link } from "react-router-dom";
+
 export type ProjectDisplayState = 'hidden'|'cards'|'article';
 
 export interface ProjectProps {
@@ -54,11 +56,13 @@ export default function ProjectArticle(props: ProjectProps) {
 	}
 
 	return (
-		<article onClick={()=> projectClick(props.projectIndex)} style={style()}>
-			<header tabIndex={0}>
-				<h2>heading</h2>
-			</header>
-			{renderContent()}
-		</article>
+		<Link to={'/projects/' + props.projectIndex.toString()}>
+			<article onClick={()=> projectClick(props.projectIndex)} style={style()}>
+				<header tabIndex={0} onSelect={()=>{console.log("hi")}}>
+					<h2>heading</h2>
+				</header>
+				{renderContent()}
+			</article>
+		</Link>
 	);
 }

@@ -1,14 +1,19 @@
 import { useState, forwardRef, useImperativeHandle } from "react";
 import Project, { ProjectDisplayState } from "./Project";
 import { PortfolioSectionProps } from "../PortfolioSection";
+import { useLoaderData } from "react-router-dom";
 
 export interface AllProjectsRef {
 	resetProjects: ()=>void;
 }
 
-export const AllProjects = forwardRef<AllProjectsRef,PortfolioSectionProps>((props, ref) => {
+export interface AllProjectsProps extends PortfolioSectionProps {
+	projectID: string,
+}
+
+export const AllProjects = forwardRef<AllProjectsRef,AllProjectsProps>((props, ref) => {
 	
-	const [activeProjectIndex, setActiveProjectIndex] = useState<number|'no selection'>('no selection')
+	const [activeProjectIndex, setActiveProjectIndex] = useState<number|'no selection'>(props.projectID?+props.projectID:"no selection")
 
 	useImperativeHandle(ref,()=>{
 		return {

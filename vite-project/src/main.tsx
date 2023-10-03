@@ -7,27 +7,39 @@ import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 
 // import './index.css'
 import './Portfolio.css'
+import AllProjects from './components/AllProjects';
 
 const router = createBrowserRouter([
 	{
-		path: "/",
-		element: <Portfolio page='projects'/>,
-		errorElement: <ErrorPage />,
+		path:"*",
+		element: <ErrorPage />
 	},
 	{
-		path: "/projects",
-		element: <Portfolio page='projects'/>,
-		errorElement: <ErrorPage />,
+		path: "/",
+		element: <Portfolio page='home'/>,
+	},
+	{
+		path: "/projects/",
+		element: <Portfolio page='projects' />,
+		errorElement: <Portfolio page='projects' />,
+	},
+	{
+		path: "/projects/:id",
+		element: <Portfolio page='projects' />,
+		errorElement: <Portfolio page='projects' />,
+		loader: async ({params}) => {return params.id}
+	},
+	{
+		path: "/demos",
+		element: <Portfolio page='demos'/>
 	},
 	{
 		path: "/about",
 		element: <Portfolio page='about'/>,
-		errorElement: <ErrorPage />,
 	},
 	{
 		path: "/contact",
 		element: <Portfolio page='contact'/>,
-		errorElement: <ErrorPage />,
 	},
   ]);
 
